@@ -11,6 +11,11 @@ $password = "1fourall";
 $host = "172.21.8.100";
 
 $API = new LM_API($host, $user, $password);
-print_r($API->showrs("172.21.8.11", "80", "tcp", "10.3.0.22" ));
+//$response=$API->delvs("11");
+//$response=$API->listvs();
+$modvsparams = array("Cache" => "1", "AddVia" => "1");
+$response=$API->modvs("12", $modvsparams);
+//$response=$API->addvs("172.21.8.122", "80", "tcp");
+print_r($response);
 
 ?>
